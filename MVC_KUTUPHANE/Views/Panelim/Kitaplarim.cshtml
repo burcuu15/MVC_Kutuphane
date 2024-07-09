@@ -1,0 +1,25 @@
+﻿@using MVC_KUTUPHANE.Models.Entity
+@model List<TblHareket>
+@{
+    ViewBag.Title = "Kitaplarim";
+    Layout = "~/Views/Shared/_LayoutPanelim.cshtml";
+}
+<br />
+<h2>Kitap Geçmişim</h2>
+
+<table class="table table-striped">
+    <tr>
+        <th>İşlem Adı</th>
+        <th>Alış Tarihi</th>
+        <th>Üye İade Tarihi</th>
+    </tr>
+    @foreach (var k in Model)
+        {
+            <tr>
+                <td>@k.TblKitap.AD</td>
+                <td>@Convert.ToDateTime(k.ALISTARIH).ToString("dd/MM/yyyy")</td>
+                <td>@Convert.ToDateTime(k.UYEGETIRTARIH).ToString("dd/MM/yyyy")</td>
+            </tr>
+        }
+</table>
+

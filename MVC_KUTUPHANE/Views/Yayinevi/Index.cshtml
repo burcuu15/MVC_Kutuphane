@@ -1,0 +1,31 @@
+﻿@using MVC_KUTUPHANE.Models.Entity
+@model List<TblYayinevi>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Yayınevleri</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <td>ID</td>
+        <td>YAYINEVİ</td>
+        <td>SİL</td>
+        <td>GÜNCELLE</td>
+    </tr>
+    @foreach (var y in Model)
+    {
+        <tr>
+            <td>@y.ID</td>
+            <td>@y.YAYINEVI</td>
+            <td>
+               @Html.ActionLink("Sil", "YayineviSil", new { id = y.ID }, new
+               { @class = "btn btn-danger", onclick = "return confirm('Silmek istiyor musunuz?')" })
+            </td>
+            <td><a href="/Yayinevi/YayineviGetir/@y.ID" class="btn btn-success">Güncelle</a></td>
+        </tr>
+    }
+</table>
+<a class="btn btn-primary" href="/Yayinevi/YayineviEkle/">Yeni Yayınevi Ekle</a>
+

@@ -1,0 +1,17 @@
+﻿@model  MVC_KUTUPHANE.Models.Entity.TblYayinevi
+@{
+    ViewBag.Title = "YayineviEkle";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<form class="form-group" method="post">
+    <div></div>
+    <div style="margin-top:15px">
+        <label>Yayınevi</label>
+        @Html.TextBoxFor(y => y.YAYINEVI, new { @class = "form-control" })
+     </div>
+    <div style="margin-top:15px">
+        <button class="btn btn-info">Yayınevi Ekle</button>
+    </div>
+</form>
+
+
